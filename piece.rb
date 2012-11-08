@@ -16,10 +16,6 @@ class Piece
 		raise "you must implement this in the child class"
 	end
 
-	def sanitize_moves(possible_moves)
-		possible_moves.reject{|move| move < 0 or move > 7}
-	end
-
 	def to_s
 		"#{self.class.name[0]}#{@color[0]}"
 	end

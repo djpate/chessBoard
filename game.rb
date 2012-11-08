@@ -1,12 +1,13 @@
-require './board.rb'
-require './piece.rb'
-require './pawn.rb'
-
 class Game
+
+	attr_reader :current_player, :board
 
 	def initialize
 		@board = Board.new
 		@current_player = Piece::WHITE
+	end
+
+	def launch
 		@playing = true
 		while @playing
 			@board.display
@@ -42,8 +43,4 @@ class Game
 
 	end
 
-
-
 end
-
-Game.new

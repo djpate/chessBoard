@@ -3,6 +3,8 @@ class Board
 	ROW = 8
 	COL = 8
 
+	attr_reader :matrix, :dead_pieces
+
 	def initialize
 		
 		create_matrix	
@@ -52,6 +54,10 @@ class Board
 
 		@matrix[new_row][new_col] = piece
 
+	end
+
+	def self.sanitize_moves(possible_moves)
+		possible_moves.reject{|move| move < 0 or move > 7}
 	end
 
 	private
